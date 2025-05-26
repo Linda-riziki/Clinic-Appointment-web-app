@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/91e4b3c2-1bf3-40ca-ba18-1b256970cb98)## Pitch Deck Link
+## Pitch Deck Link
 https://www.canva.com/design/DAGohJ0tnK4/hs7llvU9cnkBlnwQM4svBA/edit?utm_content=DAGohJ0tnK4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 #Clinic Appointment Reminder Dashboard 💡🩺
