@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Clinic Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>🏥 Clinic Dashboard</h2>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item active">
+                <a href="appointments.html" class="menu-link"><i class="fas fa-calendar-check"></i>Appointments</a>
+            </li>
+            <li class="menu-item">
+                <a href="add-new.html" class="menu-link"><i class="fas fa-plus-circle"></i>Add Appointment</a>
+            </li>
+            <li class="menu-item">
+                <a href="add-new.html#patientForm" class="menu-link"><i class="fas fa-user-plus"></i>Add Patient</a>
+            </li>
+            <li class="menu-item">
+                <a href="reminders.html" class="menu-link"><i class="fas fa-bell"></i>Reminders</a>
+            </li>
+            <li class="menu-item">
+                <a href="reports.html" class="menu-link"><i class="fas fa-chart-bar"></i>Reports</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="main-header">
+            <h1>Clinic Dashboard</h1>
+            <div class="header-actions">
+                <div class="notification-badge">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge" id="notificationCount">0</span>
+                </div>
+            </div>
+        </header>
+        <div class="content-wrapper">
+            <section id="appointments-section" class="content-section">
+                <div class="section-header">
+                    <h2>Appointments</h2>
+                    <div class="search-filter">
+                        <input type="text" id="searchInput" placeholder="Search patients...">
+                        <select id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="pending">Pending</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="appointments-stats">
+                    <div class="stat-card">
+                        <h3 id="totalAppointments">0</h3>
+                        <p>Total Today</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="confirmedAppointments">0</h3>
+                        <p>Confirmed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="pendingAppointments">0</h3>
+                        <p>Pending</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="cancelledAppointments">0</h3>
+                        <p>Cancelled</p>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Phone</th>
+                                <th>Time</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Appointment Details</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="sendReminderBtn">Send Reminder</button>
+                <button class="btn btn-secondary" id="editAppointmentBtn">Edit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
